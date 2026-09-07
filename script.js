@@ -100,7 +100,6 @@
 
   var slides = document.querySelectorAll(".featured-main .slide");
   var thumbs = document.querySelectorAll(".featured-thumbs .thumb");
-  var segs = document.querySelectorAll(".featured-progress .featured-seg");
   var titleEl = document.getElementById("featured-title");
   var captionEl = document.getElementById("featured-caption");
   var linkEl = document.getElementById("featured-link");
@@ -117,9 +116,6 @@
     thumbs.forEach(function (t, idx) {
       t.classList.toggle("is-active", idx === slideIndex);
     });
-    segs.forEach(function (g, idx) {
-      g.classList.toggle("is-active", idx === slideIndex);
-    });
     var item = FEATURED[slideIndex] || FEATURED[0];
     if (titleEl) titleEl.textContent = item.title;
     if (captionEl) captionEl.textContent = item.caption;
@@ -134,27 +130,12 @@
     });
   });
 
-  var prevBtn = document.querySelector(".featured-arrow-prev");
-  var nextBtn = document.querySelector(".featured-arrow-next");
-  if (prevBtn) {
-    prevBtn.addEventListener("click", function () {
-      goToSlide(slideIndex - 1);
-      restartSlideTimer();
-    });
-  }
-  if (nextBtn) {
-    nextBtn.addEventListener("click", function () {
-      goToSlide(slideIndex + 1);
-      restartSlideTimer();
-    });
-  }
-
   function restartSlideTimer() {
     if (slideTimer) clearInterval(slideTimer);
     if (prefersReduced) return;
     slideTimer = setInterval(function () {
       goToSlide(slideIndex + 1);
-    }, 4000);
+    }, 8800);
   }
   restartSlideTimer();
 
@@ -162,7 +143,6 @@
   var svcSlides = document.querySelectorAll(".services-visual .svc-slide");
   var services = document.querySelectorAll(".services-list .service");
   var svcIndex = 0;
-  var svcTimer = null;
 
   function goToService(i) {
     if (svcSlides.length === 0) return;
@@ -176,21 +156,16 @@
     });
   }
 
+  /* manual switching only (click + hover) — the original does not auto-rotate */
   services.forEach(function (svc) {
+    var idx = parseInt(svc.dataset.slide, 10);
     svc.addEventListener("click", function () {
-      goToService(parseInt(svc.dataset.slide, 10));
-      restartSvcTimer();
+      goToService(idx);
+    });
+    svc.addEventListener("mouseenter", function () {
+      goToService(idx);
     });
   });
-
-  function restartSvcTimer() {
-    if (svcTimer) clearInterval(svcTimer);
-    if (prefersReduced) return;
-    svcTimer = setInterval(function () {
-      goToService(svcIndex + 1);
-    }, 4500);
-  }
-  restartSvcTimer();
 
   /* ---------- 5. FAQ accordion ---------- */
   var faqItems = document.querySelectorAll(".faq-item");
@@ -211,6 +186,14 @@
     });
   });
 
+  /* expand any item pre-marked open in the HTML */
+  faqItems.forEach(function (item) {
+    if (item.classList.contains("faq-open")) {
+      var answer = item.querySelector(".faq-a");
+      if (answer) answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  });
+
   /* ---------- 6. navbar: blur on scroll + hide on scroll down (Framer-style) ---------- */
   var navbar = document.querySelector(".navbar");
   var navInner = document.querySelector(".navbar-inner");
@@ -222,7 +205,7 @@
     if (navbar) navbar.classList.toggle("is-scrolled", scrolled);
     if (navInner) navInner.classList.toggle("is-scrolled", scrolled);
     if (navbar) {
-      var scrollingDown = y > lastY && y > 320;
+      var scrollingDown = y > lastY && y > 80;
       var menuOpen = document.querySelector(".nav-pill.is-open");
       navbar.classList.toggle("is-hidden", scrollingDown && !menuOpen);
     }
@@ -245,4 +228,91 @@
       navLinks.classList.toggle("is-open");
     });
   }
+
+  /* ---------- 8. hero marquee speed calibration (~55px/s downward drift) ---------- */
+  function calibrateHero() {
+    var tracks = document.querySelectorAll(".hero-cards-track");
+    tracks.forEach(function (track, ti) {
+      if (!track.querySelector(".cards-set")) return;
+      var loop = track.scrollHeight / 2; // one full set = loop distance
+      var speed = ti === 0 ? 55 : 62; // px per second
+      track.style.animationDuration = (loop / speed).toFixed(2) + "s";
+    });
+  }
+  if (!prefersReduced) {
+    calibrateHero();
+    window.addEventListener("resize", calibrateHero);
+  }
+
+  /* ---------- 9. velocity-reactive logo marquees (slow crawl + scroll boost) ---------- */
+  (function initMarquees() {
+    if (prefersReduced) return;
+    var tracks = document.querySelectorAll(".marquee-track");
+    if (!tracks.length) return;
+    var states = [];
+    tracks.forEach(function (track) {
+      states.push({ track: track, offset: 0, period: 1 });
+    });
+    function measure() {
+      states.forEach(function (st) {
+        var g = st.track.querySelector(".marquee-group");
+        st.period = g ? g.offsetWidth : 1;
+      });
+    }
+    measure();
+    window.addEventListener("resize", measure);
+    var lastY = window.scrollY || 0;
+    var vel = 0;
+    var lastT = performance.now();
+    function frame(now) {
+      var dt = Math.min((now - lastT) / 1000, 0.1);
+      lastT = now;
+      var y = window.scrollY || 0;
+      var instV = dt > 0 ? (y - lastY) / dt : 0;
+      lastY = y;
+      vel += (instV - vel) * Math.min(dt * 4, 1);
+      var speed = 2.5 + Math.min(Math.abs(vel) * 0.02, 60);
+      states.forEach(function (st) {
+        st.offset = (st.offset - speed * dt) % st.period;
+        st.track.style.transform = "translate3d(" + st.offset.toFixed(1) + "px,0,0)";
+      });
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
+
+  /* ---------- 10. cursor-following "View Project" pill on featured image ---------- */
+  (function initCursor() {
+    var visual = document.querySelector(".featured-visual");
+    var pill = document.getElementById("featured-cursor");
+    if (!visual || !pill || prefersReduced) return;
+    var tx = 0, ty = 0, x = 0, y = 0, visible = false, raf = null;
+    function loop() {
+      x += (tx - x) * 0.16;
+      y += (ty - y) * 0.16;
+      pill.style.transform =
+        "translate3d(" + x.toFixed(1) + "px," + y.toFixed(1) + "px,0) translate(16px,-50%)";
+      if (visible) raf = requestAnimationFrame(loop);
+      else raf = null;
+    }
+    visual.addEventListener("mouseenter", function (e) {
+      var r = visual.getBoundingClientRect();
+      tx = x = e.clientX - r.left;
+      ty = y = e.clientY - r.top;
+      visible = true;
+      pill.classList.add("is-visible");
+      if (!raf) raf = requestAnimationFrame(loop);
+    });
+    visual.addEventListener("mousemove", function (e) {
+      var r = visual.getBoundingClientRect();
+      tx = Math.max(8, Math.min(e.clientX - r.left, r.width - 190));
+      ty = Math.max(32, Math.min(e.clientY - r.top, r.height - 32));
+    });
+    visual.addEventListener("mouseleave", function () {
+      visible = false;
+      pill.classList.remove("is-visible");
+      if (raf) cancelAnimationFrame(raf);
+      raf = null;
+    });
+  })();
 })();

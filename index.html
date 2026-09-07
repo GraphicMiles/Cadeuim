@@ -27,7 +27,7 @@
     </a>
 
     <nav class="nav-pill">
-      <a class="nav-link" href="#projects">Company <i class="fa-solid fa-chevron-down"></i></a>
+      <a class="nav-link" href="#about">Company <i class="fa-solid fa-chevron-down"></i></a>
       <a class="nav-link" href="#projects">Projects
         <span class="nav-badge">New</span>
       </a>
@@ -129,7 +129,7 @@
           <h4 class="featured-title" id="featured-title">Redesigning Atlas</h4>
           <p class="featured-caption" id="featured-caption">+45% engagement, -20% churn</p>
         </div>
-        <a class="link-arrow featured-link" id="featured-link" href="#projects">View Project <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="link-arrow featured-link" id="featured-link" href="#projects">View Project</a>
         <a class="featured-icon-btn" id="featured-icon-link" href="#projects" aria-label="View project">
           <span class="featured-icon-pill"><i class="fa-solid fa-arrow-right"></i></span>
         </a>
@@ -137,20 +137,14 @@
       <div class="featured-visual">
         <a class="featured-main" id="featured-main" href="#projects">
           <img class="slide is-active" src="assets/atlas.png" alt="Redesigning Atlas" />
-          <img class="slide" src="assets/project-finlytics.png" alt="Launch MVP for Finlytics" />
-          <img class="slide" src="assets/project-orbital.png" alt="Orbital Website Redesign" />
+          <img class="slide" src="assets/atlas-2.png" alt="Launch MVP for Finlytics" />
+          <img class="slide" src="assets/atlas-3.jpg" alt="Orbital Website Redesign" />
         </a>
-        <button class="featured-arrow featured-arrow-prev" aria-label="Previous project"><i class="fa-solid fa-arrow-left"></i></button>
-        <button class="featured-arrow featured-arrow-next" aria-label="Next project"><i class="fa-solid fa-arrow-right"></i></button>
-        <div class="featured-progress">
-          <span class="featured-seg is-active"></span>
-          <span class="featured-seg"></span>
-          <span class="featured-seg"></span>
-        </div>
+        <span class="featured-cursor" id="featured-cursor" aria-hidden="true"><span>View Project</span></span>
         <div class="featured-thumbs">
           <button class="thumb is-active" data-slide="0" aria-label="Slide 1"><img src="assets/atlas.png" alt="Redesigning Atlas" /></button>
-          <button class="thumb" data-slide="1" aria-label="Slide 2"><img src="assets/project-finlytics.png" alt="Launch MVP for Finlytics" /></button>
-          <button class="thumb" data-slide="2" aria-label="Slide 3"><img src="assets/project-orbital.png" alt="Orbital Website Redesign" /></button>
+          <button class="thumb" data-slide="1" aria-label="Slide 2"><img src="assets/atlas-2.png" alt="Launch MVP for Finlytics" /></button>
+          <button class="thumb" data-slide="2" aria-label="Slide 3"><img src="assets/atlas-3.jpg" alt="Orbital Website Redesign" /></button>
         </div>
       </div>
     </div>
@@ -159,6 +153,7 @@
   <!-- ============ STATS ============ -->
   <section class="section stats">
     <div class="stats-head">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>Impact</p>
       <h2 class="section-title">Lamosa makes it simple, <span>and delivers results.</span></h2>
     </div>
 
@@ -225,6 +220,7 @@
 
   <!-- ============ SERVICES ============ -->
   <section class="section services">
+    <p class="eyebrow"><span class="eyebrow-dot"></span>Services</p>
     <div class="services-head">
       <h2 class="section-title">From idea to scale. <span>We master our craft.</span></h2>
       <a class="btn btn-accent" href="#contact"><span>Start A Project</span><span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
@@ -234,10 +230,9 @@
       <div class="services-list">
         <div class="service service-open is-open" data-slide="0">
           <div class="service-row">
-            <span class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 1.5H8.5a3.5 3.5 0 1 0 0 7m3.5-7v7m0-7h3.5a3.5 3.5 0 1 1 0 7m-3.5 0H8.5m3.5 0v7m0-7h3.5m-7 0a3.5 3.5 0 1 0 0 7m3.5 0H8.5m3.5 0V19a3.5 3.5 0 1 1-3.5-3.5m7-7a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
+            <span class="service-icon"><i class="fa-solid fa-pen-ruler"></i></span>
             <h5 class="service-title">Web Design &amp; UX/UI</h5>
+            <i class="fa-solid fa-chevron-down service-chevron"></i>
           </div>
           <div class="service-desc">
             <p>Crafting sleek, user-focused interfaces in Figma that drive engagement and conversions.</p>
@@ -246,28 +241,34 @@
 
         <div class="service" data-slide="1">
           <div class="service-row">
-            <span class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 1.5H8.5a3.5 3.5 0 1 0 0 7m3.5-7v7m0-7h3.5a3.5 3.5 0 1 1 0 7m-3.5 0H8.5m3.5 0v7m0-7h3.5m-7 0a3.5 3.5 0 1 0 0 7m3.5 0H8.5m3.5 0V19a3.5 3.5 0 1 1-3.5-3.5m7-7a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
+            <span class="service-icon"><i class="fa-solid fa-code"></i></span>
             <h5 class="service-title">No-code Development</h5>
+            <i class="fa-solid fa-chevron-down service-chevron"></i>
+          </div>
+          <div class="service-desc">
+            <p>Building lightning-fast, scalable websites in Framer—without the complexity of traditional code.</p>
           </div>
         </div>
 
         <div class="service" data-slide="2">
           <div class="service-row">
-            <span class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 1.5H8.5a3.5 3.5 0 1 0 0 7m3.5-7v7m0-7h3.5a3.5 3.5 0 1 1 0 7m-3.5 0H8.5m3.5 0v7m0-7h3.5m-7 0a3.5 3.5 0 1 0 0 7m3.5 0H8.5m3.5 0V19a3.5 3.5 0 1 1-3.5-3.5m7-7a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
+            <span class="service-icon"><i class="fa-solid fa-rocket"></i></span>
             <h5 class="service-title">MVP prototyping</h5>
+            <i class="fa-solid fa-chevron-down service-chevron"></i>
+          </div>
+          <div class="service-desc">
+            <p>Rapidly launching high-converting MVPs and landing pages to validate and grow your ideas.</p>
           </div>
         </div>
 
         <div class="service" data-slide="3">
           <div class="service-row">
-            <span class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 1.5H8.5a3.5 3.5 0 1 0 0 7m3.5-7v7m0-7h3.5a3.5 3.5 0 1 1 0 7m-3.5 0H8.5m3.5 0v7m0-7h3.5m-7 0a3.5 3.5 0 1 0 0 7m3.5 0H8.5m3.5 0V19a3.5 3.5 0 1 1-3.5-3.5m7-7a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
+            <span class="service-icon"><i class="fa-solid fa-pen-nib"></i></span>
             <h5 class="service-title">Ongoing Design Partner</h5>
+            <i class="fa-solid fa-chevron-down service-chevron"></i>
+          </div>
+          <div class="service-desc">
+            <p>Providing continuous design support and updates to keep your digital presence ahead of the curve.</p>
           </div>
         </div>
       </div>
@@ -284,6 +285,7 @@
   <!-- ============ PROJECTS ============ -->
   <section class="section projects" id="projects">
     <div class="projects-head">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>Projects</p>
       <h2 class="section-title">Here's what <span>the momentum looks like.</span></h2>
     </div>
 
@@ -382,6 +384,7 @@
   <!-- ============ PROCESS ============ -->
   <section class="section process">
     <div class="process-head">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>Process</p>
       <h2 class="section-title">Proven &amp; effective process. <span>That delivers results.</span></h2>
       <p class="section-sub">We dive deep into your goals, audience, and challenges to craft a strategy that drives clear direction and impact.</p>
     </div>
@@ -389,7 +392,7 @@
     <div class="process-grid">
       <div class="process-card">
         <div class="process-media">
-          <img class="process-photo" src="assets/process-1a.png" alt="" />
+          <img class="process-photo" src="assets/process-1a.jpg" alt="" />
           <img class="process-photo" src="assets/process-1b.png" alt="" />
           <img class="swirl" src="assets/swirl.svg" alt="" />
         </div>
@@ -451,6 +454,7 @@
   <!-- ============ PRICING ============ -->
   <section class="section pricing">
     <div class="pricing-head">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>Pricing</p>
       <h2 class="section-title">Choose a plan. <span>That fits your needs.</span></h2>
       <p class="section-sub">Flexible plans designed to accelerate growth, with solutions that evolve with your business.</p>
     </div>
@@ -528,7 +532,7 @@
         <h5 class="stat-title">increase in mobile traffic retention</h5>
         <p>Lamosa completely redefined our digital presence. Their strategic design approach and attention to user behavior boosted our conversion rate significantly. We went from just a pretty site to a performance-driven asset.</p>
         <div class="testimonial-person">
-          <img src="assets/avatar-julian.png" alt="Julian Ortega" />
+          <img src="assets/avatar-julian.jpg" alt="Julian Ortega" />
           <div>
             <span class="person-name">Julian Ortega</span>
             <span class="person-role">CEO</span>
@@ -547,6 +551,7 @@
   <!-- ============ TESTIMONIALS ============ -->
   <section class="section testimonials">
     <div class="testimonials-head">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>Testimonials</p>
       <h2 class="section-title">We're loved. <span>Just success stories.</span></h2>
     </div>
 
@@ -556,7 +561,7 @@
         <h5 class="stat-title">increase in qualified leads</h5>
         <p>We launched our new site in under three weeks and saw results almost immediately. The design felt premium from day one — exactly what we needed to stand out in a crowded market.</p>
         <div class="testimonial-person">
-          <img src="assets/avatar-melissa.png" alt="Melissa Gomez" />
+          <img src="assets/avatar-melissa.jpg" alt="Melissa Gomez" />
           <div>
             <span class="person-name">Melissa Gomez</span>
             <span class="person-role">Co-Founder</span>
@@ -608,7 +613,7 @@
         <h5 class="stat-title">increase in mobile traffic retention</h5>
         <p>Lamosa completely redefined our digital presence. Their strategic design approach and attention to user behavior boosted our conversion rate significantly. We went from just a pretty site to a performance-driven asset.</p>
         <div class="testimonial-person">
-          <img src="assets/avatar-julian.png" alt="Julian Ortega" />
+          <img src="assets/avatar-julian.jpg" alt="Julian Ortega" />
           <div>
             <span class="person-name">Julian Ortega</span>
             <span class="person-role">CEO</span>
@@ -639,10 +644,10 @@
 
     <div class="reviews-row">
       <div class="reviews-avatars">
-        <img src="assets/avatar-1.png" alt="Reviewer" />
-        <img src="assets/avatar-2.png" alt="Reviewer" />
-        <img src="assets/avatar-3.png" alt="Reviewer" />
-        <img src="assets/avatar-4.png" alt="Reviewer" />
+        <img src="assets/avatar-1.jpg" alt="Reviewer" />
+        <img src="assets/avatar-2.jpg" alt="Reviewer" />
+        <img src="assets/avatar-3.jpg" alt="Reviewer" />
+        <img src="assets/avatar-4.jpg" alt="Reviewer" />
         <span class="reviews-you">You?</span>
       </div>
       <p class="reviews-note">From 1500+ reviews</p>
@@ -653,6 +658,7 @@
   <!-- ============ FAQ ============ -->
   <section class="section faq">
     <div class="faq-head">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>FAQ</p>
       <h2 class="section-title">Got a question? <span>We've got answers.</span></h2>
     </div>
 
@@ -670,26 +676,84 @@
         <div class="faq-item faq-open">
           <div class="faq-q">
             <p>What is included with each Framer template?</p>
-            <i class="fa-solid fa-plus"></i>
+            <span class="faq-icon" aria-hidden="true"></span>
           </div>
           <div class="faq-a">
             <p>Each template comes with a fully responsive design, editable components, and SEO-friendly structure ready to customize.</p>
           </div>
         </div>
-        <div class="faq-item"><div class="faq-q"><p>Do I need coding skills to use your templates?</p><i class="fa-solid fa-plus"></i></div></div>
-        <div class="faq-item"><div class="faq-q"><p>Can I use a template for multiple projects?</p><i class="fa-solid fa-plus"></i></div></div>
-        <div class="faq-item"><div class="faq-q"><p>Are the templates optimized for performance?</p><i class="fa-solid fa-plus"></i></div></div>
-        <div class="faq-item"><div class="faq-q"><p>Do you offer support after purchase?</p><i class="fa-solid fa-plus"></i></div></div>
-        <div class="faq-item"><div class="faq-q"><p>Can I integrate third-party tools with these templates?</p><i class="fa-solid fa-plus"></i></div></div>
-        <div class="faq-item"><div class="faq-q"><p>Do you offer customizations beyond the template?</p><i class="fa-solid fa-plus"></i></div></div>
-        <div class="faq-item"><div class="faq-q"><p>Will my template receive updates?</p><i class="fa-solid fa-plus"></i></div></div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <p>Do I need coding skills to use your templates?</p>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </div>
+          <div class="faq-a">
+            <p>No, our templates are built for no-code customization directly in Framer’s visual editor.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <p>Can I use a template for multiple projects?</p>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </div>
+          <div class="faq-a">
+            <p>Each purchase includes a license for one project. For multiple uses, additional licenses are required.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <p>Are the templates optimized for performance?</p>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </div>
+          <div class="faq-a">
+            <p>Yes, we ensure fast load times, clean structure, and mobile-first optimization for every template.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <p>Do you offer support after purchase?</p>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </div>
+          <div class="faq-a">
+            <p>Yes, we provide email support and documentation to help you get started and resolve issues quickly.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <p>Can I integrate third-party tools with these templates?</p>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </div>
+          <div class="faq-a">
+            <p>Absolutely! Framer supports integrations with tools like analytics, forms, and marketing platforms.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <p>Do you offer customizations beyond the template?</p>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </div>
+          <div class="faq-a">
+            <p>Yes, we offer design and development services if you need a tailored solution or enhancements visit lunixify dot studio for more details.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <p>Will my template receive updates?</p>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </div>
+          <div class="faq-a">
+            <p>Yes, we periodically release updates to improve performance, add features, and fix any bugs.</p>
+          </div>
+        </div>
       </div>
+</div>
     </div>
   </section>
 
   <!-- ============ CONTACT ============ -->
   <section class="section contact" id="contact">
     <div class="contact-head">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>Contact</p>
       <h2 class="section-title">Get in touch <span>with the team.</span></h2>
       <p class="section-sub">Have a project in mind or need guidance? Reach out to our team and let's explore how we can help bring your vision to life.</p>
     </div>
@@ -786,6 +850,7 @@
   <!-- ============ BLOGS ============ -->
   <section class="section blogs" id="blogs">
     <div class="blogs-head">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>Blog</p>
       <h2 class="section-title">Fresh insights &amp; ideas, <span>from the team.</span></h2>
       <p class="section-sub">Expert tips, case studies, and trends to help you design, grow, and convert smarter.</p>
     </div>
