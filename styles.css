@@ -251,11 +251,14 @@ ul {
 
 .navbar {
   position: fixed;
-  top: 0;
+  top: 1.5rem;
   left: 0;
   right: 0;
   z-index: 60;
-  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
   will-change: transform;
 }
@@ -269,13 +272,7 @@ ul {
 .navbar-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: var(--container);
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 32px;
-  padding: 0.75rem 1.5rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  margin-left: auto;
 }
 
 .navbar-inner.is-scrolled {
@@ -320,11 +317,10 @@ ul {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: transparent;
-  border: none;
-  border-radius: 100px;
-  padding: 0;
-  box-shadow: none;
+  background: #fff;
+  border-radius: 32px;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .nav-link {
@@ -2527,7 +2523,7 @@ ul {
 
   /* navbar */
   .navbar {
-    padding: 1rem 1rem;
+    padding: 0 1rem;
   }
 
   .menu-toggle {
