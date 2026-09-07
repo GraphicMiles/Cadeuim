@@ -212,21 +212,12 @@
     }
   });
 
-  /* ---------- 6. navbar: blur on scroll + hide on scroll down (Framer-style) ---------- */
+  /* ---------- 6. navbar: no special scroll behavior (position: relative) ---------- */
   var navbar = document.querySelector(".navbar");
-  var navInner = document.querySelector(".navbar-inner");
   var lastY = window.scrollY || 0;
   var ticking = false;
   function onScroll() {
     var y = window.scrollY || 0;
-    var scrolled = y > 24;
-    if (navbar) navbar.classList.toggle("is-scrolled", scrolled);
-    if (navInner) navInner.classList.toggle("is-scrolled", scrolled);
-    if (navbar) {
-      var scrollingDown = y > lastY && y > 80;
-      var menuOpen = document.querySelector(".nav-pill.is-open");
-      navbar.classList.toggle("is-hidden", scrollingDown && !menuOpen);
-    }
     lastY = y;
     ticking = false;
   }

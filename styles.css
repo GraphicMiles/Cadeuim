@@ -37,7 +37,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 6rem;
+  scroll-padding-top: 2rem;
 }
 
 body {
@@ -250,14 +250,12 @@ ul {
 /* ============ NAVBAR ============ */
 
 .navbar {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
   z-index: 60;
-  padding: 0.6rem 2rem;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
-  will-change: transform;
+  padding: 1.5rem 2rem;
 }
 
 .navbar.is-hidden {
@@ -272,18 +270,10 @@ ul {
   justify-content: space-between;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0.75rem 1rem;
-  border-radius: var(--radius-btn);
-  background: rgba(252, 252, 253, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  transition: all 0.3s ease;
 }
 
 .navbar-inner.is-scrolled {
-  background: rgba(252, 252, 253, 0.95);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  /* no special styling needed */
 }
 
 .menu-toggle {
@@ -2530,15 +2520,16 @@ ul {
 
   /* navbar */
   .navbar {
-    padding: 0.6rem 1rem;
+    padding: 1rem 1rem;
   }
 
   .menu-toggle {
     display: inline-flex;
-    width: 3.25rem;
-    height: 2.4rem;
-    border-radius: 1rem;
-    background: var(--panel-3);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--panel);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
 
   .nav-pill {
