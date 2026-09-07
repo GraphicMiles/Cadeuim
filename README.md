@@ -1,21 +1,22 @@
-# lamosa Studio — Agency/SaaS Template (Clone)
+# Relay — AI Lead Agent for Home Service Businesses
 
-A faithful HTML/CSS/JS recreation of the **lamosa Studio** premium agency / SaaS
-Framer template, rebuilt from scratch with semantic markup, a flexible CSS
-architecture, and vanilla-JS interactions.
+An AI agent that texts back missed calls, qualifies the job, and books the appointment for home service businesses — 24/7, in under a minute.
 
-## Features
+## What Relay Does
 
-- **Hero** — animated glow, floating testimonial-card marquees, and trusted-logo marquee
-- **Featured project slideshow** — 3 slides with crossfade, arrows, progress, and thumbnails
-- **Stats** — count-up numbers and award pills
-- **Services** — interactive list with crossfading visuals
-- **Projects / Process / Pricing** — full card layouts
-- **Testimonials** — review cards with metrics and avatar stacks
-- **FAQ** — accordion (first item open)
-- **Contact** — form + info
-- **Blog** — featured post + post list
-- **Footer** — newsletter, company links, socials, legal
+- **Missed Call Text-Back** — Instantly texts every missed call, qualifies the job, and books the appointment
+- **Lead Form Auto-Reply** — Responds to website and Google leads within 30 seconds
+- **Smart Follow-Up Sequences** — Follows up on day 1, 3, and 7 with context-aware messages
+- **Appointment Reminders & Confirmations** — Automatic confirmations and day-of reminders cut no-shows by up to 60%
+
+## Built For
+
+- Plumbing
+- HVAC
+- Electrical
+- Roofing
+- Cleaning
+- Pest Control
 
 ## Tech
 

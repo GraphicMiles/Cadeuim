@@ -82,18 +82,18 @@
   /* ---------- 3. featured project slideshow ---------- */
   var FEATURED = [
     {
-      title: "Redesigning Atlas",
-      caption: "+45% engagement, -20% churn",
+      title: "How a 6-person plumbing team booked $47K extra",
+      caption: "+312% response rate, -89% missed calls",
       link: "#projects"
     },
     {
-      title: "Launch MVP for Finlytics",
-      caption: "Live in 27 days, 1,200+ early users",
+      title: "HVAC seasonal surge: 400 leads captured",
+      caption: "100% answered in under 60 seconds",
       link: "#projects"
     },
     {
-      title: "Orbital Website Redesign",
-      caption: "+21% signup conversion rate",
+      title: "Electrician went from 12 missed calls/day to 0",
+      caption: "+86% booking conversion in 60 days",
       link: "#projects"
     }
   ];
