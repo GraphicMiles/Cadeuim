@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Desktop",
+    "tag": "NAV"
+  },
+  {
+    "name": "content",
+    "tag": "DIV"
+  },
+  {
+    "name": "container",
+    "tag": "DIV"
+  },
+  {
+    "name": "logo",
+    "tag": "DIV"
+  },
+  {
+    "name": "Small Inverted",
+    "tag": "A"
+  },
+  {
+    "name": "Logo",
+    "tag": "DIV"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV"
+  },
+  {
+    "name": "Nav Links",
+    "tag": "DIV"
+  },
+  {
+    "name": "Links",
+    "tag": "DIV"
+  },
+  {
+    "name": "Default",
+    "tag": "A"
+  },
+  {
+    "name": "container",
+    "tag": "DIV"
+  },
+  {
+    "name": "content",
+    "tag": "DIV"
+  },
+  {
+    "name": "content",
+    "tag": "DIV"
+  },
+  {
+    "name": "Dropdown icon",
+    "tag": "DIV"
+  },
+  {
+    "name": "Default",
+    "tag": "A"
+  },
+  {
+    "name": "container",
+    "tag": "DIV"
+  },
+  {
+    "name": "content",
+    "tag": "DIV"
+  },
+  {
+    "name": "content",
+    "tag": "DIV"
+  },
+  {
+    "name": "Badge",
+    "tag": "DIV"
+  },
+  {
+    "name": "Default",
+    "tag": "A"
+  },
+  {
+    "name": "container",
+    "tag": "DIV"
+  },
+  {
+    "name": "content",
+    "tag": "DIV"
+  },
+  {
+    "name": "content",
+    "tag": "DIV"
+  },
+  {
+    "name": "Default",
+    "tag": "A"
+  },
+  {
+    "name": "container",
+    "tag": "DIV"
+  },
+  {
+    "name": "content",
+    "tag": "DIV"
+  },
+  {
+    "name": "content",
+    "tag": "DIV"
+  },
+  {
+    "name": "Button",
+    "tag": "DIV"
+  },
+  {
+    "name": "Small",
+    "tag": "A"
+  },
+  {
+    "name": "content",
+    "tag": "BUTTON"
+  },
+  {
+    "name": "Icon",
+    "tag": "DIV"
+  },
+  {
+    "name": "Icon",
+    "tag": "DIV"
+  },
+  {
+    "name": "Main",
+    "tag": "MAIN"
+  },
+  {
+    "name": "Section-hero",
+    "tag": "SECTION"
+  },
+  {
+    "name": "Right Start",
+    "tag": "DIV"
+  },
+  {
+    "name": "Card-4",
+    "tag": "DIV"
+  },
+  {
+    "name": "Content",
+    "tag": "DIV"
+  },
+  {
+    "name": "Card-3",
+    "tag": "DIV"
+  },
+  {
+    "name": "Content",
+    "tag": "DIV"
+  },
+  {
+    "name": "Card-2",
+    "tag": "DIV"
+  },
+  {
+    "name": "Content",
+    "tag": "DIV"
+  },
+  {
+    "name": "Card-1",
+    "tag": "DIV"
+  },
+  {
+    "name": "Content",
+    "tag": "DIV"
+  },
+  {
+    "name": "Left Start",
+    "tag": "DIV"
+  },
+  {
+    "name": "Card-4",
+    "tag": "DIV"
+  },
+  {
+    "name": "Content",
+    "tag": "DIV"
+  },
+  {
+    "name": "Card-3",
+    "tag": "DIV"
+  },
+  {
+    "name": "Content",
+    "tag": "DIV"
+  },
+  {
+    "name": "Card-2",
+    "tag": "DIV"
+  },
+  {
+    "name": "Content",
+    "tag": "DIV"
+  }
+]

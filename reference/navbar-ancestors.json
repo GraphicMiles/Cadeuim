@@ -1,0 +1,37 @@
+[
+  {
+    "tag": "NAV",
+    "className": "framer-oALP2 framer-lr3wq8 framer-v-lr3wq8",
+    "position": "relative",
+    "top": "0px",
+    "zIndex": "auto"
+  },
+  {
+    "tag": "DIV",
+    "className": "framer-12u4aos-container",
+    "position": "fixed",
+    "top": "0px",
+    "zIndex": "10"
+  },
+  {
+    "tag": "DIV",
+    "className": "ssr-variant hidden-fhko8 hidden-12w45vh",
+    "position": "static",
+    "top": "auto",
+    "zIndex": "auto"
+  },
+  {
+    "tag": "DIV",
+    "className": "framer-PMSiK framer-h0r2te",
+    "position": "relative",
+    "top": "0px",
+    "zIndex": "auto"
+  },
+  {
+    "tag": "DIV",
+    "className": "",
+    "position": "static",
+    "top": "auto",
+    "zIndex": "auto"
+  }
+]

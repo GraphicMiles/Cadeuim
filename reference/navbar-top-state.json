@@ -1,0 +1,20 @@
+{
+  "position": "relative",
+  "top": "0px",
+  "left": "0px",
+  "right": "0px",
+  "width": "1440px",
+  "height": "84px",
+  "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "zIndex": "auto",
+  "transform": "none",
+  "opacity": "1",
+  "display": "flex",
+  "rect_top": 0,
+  "rect_bottom": 84,
+  "rect_left": 0,
+  "rect_right": 1440,
+  "rect_width": 1440,
+  "rect_height": 84
+}

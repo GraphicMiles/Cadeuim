@@ -249,16 +249,19 @@ ul {
 
 /* ============ NAVBAR ============ */
 
-.navbar {
+.navbar-wrapper {
   position: fixed;
-  top: 1.5rem;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 60;
+}
+
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 1rem 2rem;
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
   will-change: transform;
 }
@@ -653,8 +656,6 @@ ul {
 
 .featured {
   padding-top: 2.8rem;
-  min-height: 150vh; /* Extra height for scroll-linked slideshow */
-  position: relative;
 }
 
 .featured-card {
@@ -663,10 +664,8 @@ ul {
   gap: 1.5rem;
   width: 100%;
   background: linear-gradient(180deg, #fff 0%, var(--panel) 100%);
-  border-radius: var(--radius-card);
+  border-radius: 32px;
   padding: 1.5rem;
-  position: sticky;
-  top: 8rem;
 }
 
 .featured-head {
@@ -883,7 +882,7 @@ ul {
   width: calc(33.333% - 1rem);
   min-height: 15rem;
   background: linear-gradient(180deg, #fff 0%, var(--panel) 100%);
-  border-radius: var(--radius-card);
+  border-radius: 32px;
   padding: 2rem;
   position: relative;
 }
@@ -906,11 +905,17 @@ ul {
   justify-content: center;
   width: 3.5rem;
   height: 3.5rem;
-  border-radius: 50%;
+  border-radius: 99px;
   background: var(--dark);
   color: #fff;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  box-shadow: 
+    rgba(1, 3, 9, 0.25) 0px 7px 16px 0px,
+    rgba(1, 3, 9, 0.2) 0px 29px 29px 0px,
+    rgba(1, 3, 9, 0.15) 0px 65px 39px 0px,
+    rgba(1, 3, 9, 0.06) 0px 115px 46px 0px,
+    rgba(1, 3, 9, 0.03) 0px 180px 51px 0px;
 }
 
 .stat-number {
@@ -937,17 +942,8 @@ ul {
 .stat-cta {
   position: relative;
   justify-content: center;
-  background: var(--panel-3);
+  background: #EBECEF;
   overflow: hidden;
-}
-
-.stat-cta .swirl {
-  right: -3rem;
-  bottom: -3rem;
-  width: 19rem;
-  height: 19rem;
-  opacity: 0.55;
-  z-index: 0;
 }
 
 .stat-cta-title {
