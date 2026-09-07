@@ -212,12 +212,17 @@
     }
   });
 
-  /* ---------- 6. navbar: no special scroll behavior (position: relative) ---------- */
+  /* ---------- 6. navbar: hide on scroll down (Framer-style) ---------- */
   var navbar = document.querySelector(".navbar");
   var lastY = window.scrollY || 0;
   var ticking = false;
   function onScroll() {
     var y = window.scrollY || 0;
+    if (navbar) {
+      var scrollingDown = y > lastY && y > 80;
+      var menuOpen = document.querySelector(".nav-pill.is-open");
+      navbar.classList.toggle("is-hidden", scrollingDown && !menuOpen);
+    }
     lastY = y;
     ticking = false;
   }
