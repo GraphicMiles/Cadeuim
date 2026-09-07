@@ -1,0 +1,8 @@
+# local render artifacts
+final.png
+render-check.png
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
