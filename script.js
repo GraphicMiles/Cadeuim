@@ -1,6 +1,6 @@
 /* =========================================================
    lamosa Studio — clone interactions & animations
-   Scroll reveal · count-up · marquees · slideshows · accordion
+   Scroll reveal · count-up · scroll-linked slideshow · marquees · accordion
    ========================================================= */
 
 (function () {
@@ -79,7 +79,7 @@
     countObserver.observe(el);
   });
 
-  /* ---------- 3. featured project slideshow ---------- */
+  /* ---------- 3. SCROLL-LINKED featured project slideshow ---------- */
   var FEATURED = [
     {
       title: "How a 6-person plumbing team booked $47K extra",
@@ -104,8 +104,8 @@
   var captionEl = document.getElementById("featured-caption");
   var linkEl = document.getElementById("featured-link");
   var iconLinkEl = document.getElementById("featured-icon-link");
+  var featuredSection = document.querySelector(".featured");
   var slideIndex = 0;
-  var slideTimer = null;
 
   function goToSlide(i) {
     if (slides.length === 0) return;
@@ -123,21 +123,39 @@
     if (iconLinkEl) iconLinkEl.setAttribute("href", item.link);
   }
 
+  // Manual thumbnail click
   thumbs.forEach(function (thumb) {
     thumb.addEventListener("click", function () {
       goToSlide(parseInt(thumb.dataset.slide, 10));
-      restartSlideTimer();
     });
   });
 
-  function restartSlideTimer() {
-    if (slideTimer) clearInterval(slideTimer);
-    if (prefersReduced) return;
-    slideTimer = setInterval(function () {
-      goToSlide(slideIndex + 1);
-    }, 8800);
+  // Scroll-linked slideshow: images change as you scroll through the section
+  function updateFeaturedOnScroll() {
+    if (!featuredSection || slides.length === 0) return;
+
+    var rect = featuredSection.getBoundingClientRect();
+    var sectionTop = rect.top;
+    var sectionHeight = rect.height;
+    var viewportHeight = window.innerHeight;
+
+    // Calculate scroll progress through the section
+    // Progress goes from 0 (section top at viewport top) to 1 (section bottom at viewport bottom)
+    var scrollProgress = (viewportHeight - sectionTop) / (sectionHeight + viewportHeight);
+    scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+
+    // Map progress to slide index (0, 1, 2)
+    var newIndex = Math.min(FEATURED.length - 1, Math.floor(scrollProgress * FEATURED.length));
+
+    if (newIndex !== slideIndex) {
+      goToSlide(newIndex);
+    }
   }
-  restartSlideTimer();
+
+  window.addEventListener("scroll", function () {
+    requestAnimationFrame(updateFeaturedOnScroll);
+  });
+  updateFeaturedOnScroll(); // initial call
 
   /* ---------- 4. services crossfade ---------- */
   var svcSlides = document.querySelectorAll(".services-visual .svc-slide");

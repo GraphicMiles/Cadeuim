@@ -272,13 +272,18 @@ ul {
   justify-content: space-between;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0;
+  padding: 0.75rem 1rem;
   border-radius: var(--radius-btn);
+  background: rgba(252, 252, 253, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
 }
 
 .navbar-inner.is-scrolled {
-  /* keep transparent like the original — only the link pill carries a surface */
-  padding: 0;
+  background: rgba(252, 252, 253, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .menu-toggle {
@@ -318,10 +323,10 @@ ul {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: #FCFCFD;
+  background: transparent;
   border: none;
   border-radius: 100px;
-  padding: 0.75rem;
+  padding: 0;
   box-shadow: none;
 }
 
@@ -655,6 +660,8 @@ ul {
 
 .featured {
   padding-top: 2.8rem;
+  min-height: 200vh; /* Extra height for scroll-linked slideshow */
+  position: relative;
 }
 
 .featured-card {
@@ -665,6 +672,8 @@ ul {
   background: linear-gradient(180deg, #fff 0%, var(--panel) 100%);
   border-radius: var(--radius-card);
   padding: 1.5rem;
+  position: sticky;
+  top: 6rem;
 }
 
 .featured-head {
