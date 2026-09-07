@@ -40,7 +40,7 @@
     var siblings = el.parentElement ? el.parentElement.children.length : 0;
     if (siblings > 1) {
       var idx = Array.prototype.indexOf.call(el.parentElement.children, el);
-      el.style.transitionDelay = Math.min(idx, 5) * 70 + "ms";
+      el.style.transitionDelay = Math.min(idx, 6) * 80 + "ms";
     }
     revealObserver.observe(el);
   });
@@ -211,15 +211,30 @@
     });
   });
 
-  /* ---------- 6. navbar scrolled state ---------- */
+  /* ---------- 6. navbar: blur on scroll + hide on scroll down (Framer-style) ---------- */
   var navbar = document.querySelector(".navbar");
   var navInner = document.querySelector(".navbar-inner");
+  var lastY = window.scrollY || 0;
+  var ticking = false;
   function onScroll() {
-    var scrolled = window.scrollY > 24;
-    navbar.classList.toggle("is-scrolled", scrolled);
+    var y = window.scrollY || 0;
+    var scrolled = y > 24;
+    if (navbar) navbar.classList.toggle("is-scrolled", scrolled);
     if (navInner) navInner.classList.toggle("is-scrolled", scrolled);
+    if (navbar) {
+      var scrollingDown = y > lastY && y > 320;
+      var menuOpen = document.querySelector(".nav-pill.is-open");
+      navbar.classList.toggle("is-hidden", scrollingDown && !menuOpen);
+    }
+    lastY = y;
+    ticking = false;
   }
-  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(onScroll);
+    }
+  }, { passive: true });
   onScroll();
 
   /* ---------- 7. mobile menu toggle ---------- */
