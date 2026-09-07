@@ -236,10 +236,36 @@
 
   /* ---------- 7. mobile menu toggle ---------- */
   var menuToggle = document.querySelector(".menu-toggle");
-  var navLinks = document.querySelector(".nav-pill");
-  if (menuToggle && navLinks) {
+  var mobileMenu = document.querySelector(".mobile-menu");
+  var companyExpandable = document.querySelector(".mobile-menu-expandable");
+  var companySubmenu = document.getElementById("company-submenu");
+  
+  if (menuToggle && mobileMenu) {
     menuToggle.addEventListener("click", function () {
-      navLinks.classList.toggle("is-open");
+      mobileMenu.classList.toggle("is-open");
+      // Change hamburger to X when open
+      var icon = menuToggle.querySelector("i");
+      if (mobileMenu.classList.contains("is-open")) {
+        icon.className = "fa-solid fa-xmark";
+      } else {
+        icon.className = "fa-solid fa-bars";
+      }
+    });
+    
+    // Close menu when clicking outside
+    mobileMenu.addEventListener("click", function (e) {
+      if (e.target === mobileMenu) {
+        mobileMenu.classList.remove("is-open");
+        menuToggle.querySelector("i").className = "fa-solid fa-bars";
+      }
+    });
+  }
+  
+  // Company expandable section
+  if (companyExpandable && companySubmenu) {
+    companyExpandable.addEventListener("click", function () {
+      companyExpandable.classList.toggle("is-expanded");
+      companySubmenu.classList.toggle("is-open");
     });
   }
 
