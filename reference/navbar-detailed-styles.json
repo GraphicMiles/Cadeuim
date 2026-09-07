@@ -1,0 +1,18 @@
+{
+  "position": "relative",
+  "top": "0px",
+  "left": "0px",
+  "right": "0px",
+  "width": "1376px",
+  "height": "350px",
+  "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "borderRadius": "0px",
+  "padding": "0px",
+  "margin": "0px",
+  "boxShadow": "none",
+  "zIndex": "2",
+  "display": "flex",
+  "alignItems": "center",
+  "justifyContent": "flex-start"
+}
